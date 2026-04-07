@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Quilt · Baby Care System</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════
+     MEDICAL DECORATIVE BACKGROUND
+════════════════════════════════════ -->
+
+
+    <!-- ████ TINY CROSS — BOTTOM CENTER ████ -->
+    <g opacity="0.25" fill="#3DD68C" transform="translate(700, 820)">
+      <rect x="-5" y="-22" width="10" height="44" rx="3"/>
+      <rect x="-22" y="-5" width="44" height="10" rx="3"/>
+    </g>
+
+    <!-- ████ HEARTBEAT TRACE — TOP BAND ████ -->
+    <g opacity="0.40" stroke="#00C9B8" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M-20,110 L80,110 L95,82 L112,138 L124,62 L140,158 L154,110 L280,110
+               L296,110 L310,86 L322,134 L334,68 L348,150 L362,110 L500,110
+               L516,110 L530,90 L542,130 L554,74 L568,148 L580,110 L720,110
+               L736,110 L750,88 L762,132 L774,70 L788,152 L800,110 L960,110"/>
+    </g>
+
+    <!-- ████ HEARTBEAT TRACE — BOTTOM BAND ████ -->
+    <g opacity="0.32" stroke="#3DD68C" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M-20,820 L100,820 L115,792 L130,848 L144,772 L158,868 L172,820 L320,820
+               L336,820 L350,798 L362,842 L374,778 L388,862 L400,820 L560,820
+               L574,820 L588,800 L600,840 L612,776 L626,862 L640,820 L800,820"/>
+    </g>
+
+    <!-- ████ CONCENTRIC PULSE RINGS — TOP RIGHT ████ -->
+    <g fill="none" stroke="#00C9B8" stroke-width="1.8">
+      <circle cx="1380" cy="160" r="50"  opacity="0.35"/>
+      <circle cx="1380" cy="160" r="90"  opacity="0.26"/>
+      <circle cx="1380" cy="160" r="132" opacity="0.18"/>
+      <circle cx="1380" cy="160" r="175" opacity="0.12"/>
+    </g>
+
+    <!-- ████ CONCENTRIC PULSE RINGS — BOTTOM LEFT ████ -->
+    <g fill="none" stroke="#3DD68C" stroke-width="1.8">
+      <circle cx="80" cy="820" r="45"  opacity="0.32"/>
+      <circle cx="80" cy="820" r="82"  opacity="0.23"/>
+      <circle cx="80" cy="820" r="122" opacity="0.15"/>
+    </g>
+
+    <!-- ████ CONCENTRIC PULSE RINGS — CENTER RIGHT ████ -->
+    <g fill="none" stroke="#5B8CFF" stroke-width="1.5">
+      <circle cx="1360" cy="500" r="38" opacity="0.28"/>
+      <circle cx="1360" cy="500" r="70" opacity="0.18"/>
+      <circle cx="1360" cy="500" r="104" opacity="0.11"/>
+    </g>
+
+    <!-- ████ BABY SILHOUETTE — RIGHT SIDE ████ -->
+    <g opacity="0.22" fill="#00C9B8" transform="translate(1300, 390)">
+      <ellipse cx="0" cy="-40" rx="26" ry="28"/>
+      <ellipse cx="0" cy="16"  rx="20" ry="28"/>
+      <ellipse cx="-26" cy="4"  rx="8" ry="18" transform="rotate(-28,-26,4)"/>
+      <ellipse cx="26"  cy="4"  rx="8" ry="18" transform="rotate(28,26,4)"/>
+      <ellipse cx="-12" cy="52" rx="8" ry="18" transform="rotate(-10,-12,52)"/>
+      <ellipse cx="12"  cy="52" rx="8" ry="18" transform="rotate(10,12,52)"/>
+    </g>
+
+    <!-- ████ THERMOMETER — BOTTOM RIGHT ████ -->
+    <g opacity="0.30" transform="translate(1360, 660)">
+      <rect x="-9" y="-70" width="18" height="78" rx="9" fill="none" stroke="#FF9F6B" stroke-width="2.5"/>
+      <circle cx="0" cy="18" r="16" fill="#FF9F6B" opacity="0.50"/>
+      <rect x="-3" y="-62" width="6" height="68" rx="3" fill="#FF5A3C" opacity="0.70"/>
+    </g>
+
+    <!-- ████ STETHOSCOPE SILHOUETTE — TOP CENTER ████ -->
+    <g opacity="0.20" fill="none" stroke="#5B8CFF" stroke-width="2.5" stroke-linecap="round" transform="translate(620, 20)">
+      <path d="M-30,10 Q-30,50 0,60 Q30,50 30,10"/>
+      <circle cx="0" cy="72" r="14" fill="#5B8CFF" opacity="0.28" stroke="none"/>
+      <line x1="-30" y1="10" x2="-30" y2="-10"/>
+      <line x1="30"  y1="10" x2="30"  y2="-10"/>
+      <circle cx="-30" cy="-14" r="5" fill="#5B8CFF" opacity="0.40" stroke="none"/>
+      <circle cx="30"  cy="-14" r="5" fill="#5B8CFF" opacity="0.40" stroke="none"/>
+    </g>
+
+    <!-- ████ DOT GRID ████ -->
+    <defs>
+      <pattern id="dotgrid" x="0" y="0" width="36" height="36" patternUnits="userSpaceOnUse">
+        <circle cx="18" cy="18" r="1.2" fill="#00C9B8" opacity="0.28"/>
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#dotgrid)"/>
+
+    <!-- ████ SUBTLE DIAGONAL LINES — lower half ████ -->
+    <g opacity="0.08" stroke="#00C9B8" stroke-width="1">
+      <line x1="0"    y1="600" x2="200"  y2="900"/>
+      <line x1="100"  y1="600" x2="300"  y2="900"/>
+      <line x1="200"  y1="600" x2="400"  y2="900"/>
+      <line x1="1100" y1="600" x2="1300" y2="900"/>
+      <line x1="1200" y1="600" x2="1400" y2="900"/>
+    </g>
+
+  </svg>
+</div>
+
+<!-- Alert Container -->
+<div id="alert-container"></div>
+
+<div class="app">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-brand">
+      <h1>Smart <span>Quilt</span></h1>
+      <p>Baby Care · Real-time Dashboard</p>
+    </div>
+    <div class="header-time">
+      <div class="clock" id="clock">--:--:--</div>
+      <div class="date" id="date">Loading…</div>
+    </div>
+  </header>
+
+  <!-- ECG Strip -->
+  <div class="ecg-strip">
+    <div class="ecg-header">
+      <div class="ecg-label">
+        <div class="ecg-dot offline" id="ecg-dot"></div>
+        Connection Status
+      </div>
+      <div class="ecg-status-badge offline" id="ecg-badge">Disconnected</div>
+    </div>
+    <div class="ecg-canvas-wrap">
+      <canvas id="ecg-canvas"></canvas>
+    </div>
+  </div>
+
+  <!-- Main Grid -->
+  <div class="grid">
+
+    <!-- Diaper Card -->
+    <div class="card card-diaper">
+      <div style="display:flex; align-items:flex-start; justify-content:space-between;">
+        <div>
+          <div class="card-label">Diaper Wetness</div>
+          <div class="card-value" id="moisture-val">--<sup>%</sup></div>
+        </div>
+        <div class="card-icon">💧</div>
+      </div>
+      <div class="diaper-bar-wrap">
+        <div class="diaper-bar-track">
+          <div class="diaper-bar-fill" id="diaper-fill" style="width:0%"></div>
+        </div>
+        <div class="diaper-segments">
+          <span class="diaper-seg">0%</span>
+          <span class="diaper-seg">25%</span>
+          <span class="diaper-seg">50%</span>
+          <span class="diaper-seg">75%</span>
+          <span class="diaper-seg">100%</span>
+        </div>
+      </div>
+      <div class="status-chip dry" id="soil-chip">
+        <span id="soil-icon">🌿</span>
+        <span id="soil-label">Dry</span>
+      </div>
+    </div>
+
+    <!-- Temperature Card -->
+    <div class="card card-temp">
+      <div style="display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:4px;">
+        <div>
+          <div class="card-label">Temperature</div>
+          <div class="card-value" id="temp-val">--<sup>°C</sup></div>
+        </div>
+        <div class="card-icon">🌡️</div>
+      </div>
+      <div class="temp-gauge-wrap">
+        <svg class="temp-arc-svg" viewBox="0 0 140 80" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="arcGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%"   stop-color="#3DD68C"/>
+              <stop offset="50%"  stop-color="#FF9F6B"/>
+              <stop offset="100%" stop-color="#FF5A3C"/>
+            </linearGradient>
+          </defs>
+          <path d="M 10 74 A 60 60 0 0 1 130 74"
+                fill="none" stroke="rgba(0,201,184,0.15)" stroke-width="8" stroke-linecap="round"/>
+          <path id="arc-fill" d="M 10 74 A 60 60 0 0 1 130 74"
+                fill="none" stroke="url(#arcGrad)" stroke-width="8" stroke-linecap="round"
+                stroke-dasharray="0 188.5"/>
+          <circle id="arc-needle" cx="70" cy="74" r="6" fill="#FF5A3C" opacity="0"/>
+        </svg>
+        <div class="temp-warning" id="temp-warn">⚠️ Temperature High</div>
+      </div>
+    </div>
+
+    <!-- Presence Card -->
+    <div class="card card-presence">
+      <div class="card-label">Baby Presence</div>
+      <div class="presence-visual">
+        <div class="presence-orb-wrap">
+          <div class="presence-orb absent" id="presence-orb">🐣</div>
+          <div class="presence-ring" id="ring-1"></div>
+          <div class="presence-ring" id="ring-2"></div>
+        </div>
+        <div class="presence-state" id="presence-label">No Data</div>
+      </div>
+    </div>
+
+    <!-- System Card -->
+    <div class="card card-system">
+      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+        <div>
+          <div class="card-label">System Overview</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:400;">
+            ESP32 · Device Health
+          </div>
+        </div>
+        <div>
+          <div id="last-update-label" style="font-size:12px;">Last update: —</div>
+        </div>
+      </div>
+
+      <div class="system-grid">
+        <div class="sys-metric">
+          <div class="sys-metric-label">Connection</div>
+          <div class="sys-metric-val" id="sys-conn-val">Offline</div>
+          <div class="conn-indicator">
+            <div class="conn-bar-wrap">
+              <div class="conn-bar-fill" id="conn-bar" style="width:0%"></div>
+            </div>
+            <div class="conn-pct" id="conn-pct">0%</div>
+          </div>
+        </div>
+        <div class="sys-metric">
+          <div class="sys-metric-label">Data Points</div>
+          <div class="sys-metric-val" id="sys-reads">0</div>
+          <div class="sys-metric-note">Total readings</div>
+        </div>
+        <div class="sys-metric">
+          <div class="sys-metric-label">Uptime</div>
+          <div class="sys-metric-val" id="sys-uptime">0s</div>
+          <div class="sys-metric-note">Since first connection</div>
+        </div>
+        <div class="sys-metric">
+          <div class="sys-metric-label">Poll Rate</div>
+          <div class="sys-metric-val">2s</div>
+          <div class="sys-metric-note">Refresh interval</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /grid -->
+</div><!-- /app -->
+
+<script src="app.js"></script>
+</body>
+</html>
