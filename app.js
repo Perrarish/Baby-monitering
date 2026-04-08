@@ -1,7 +1,7 @@
 /* ─────────────────────────────────────────
    CONFIGURATION
 ───────────────────────────────────────── */
-const API_URL = "http://172.31.98.135/data";
+const API_URL = "http://192.168.1.6/data";
 const POLL_INTERVAL = 2000;
 
 /* ─────────────────────────────────────────
@@ -71,17 +71,18 @@ function drawECG() {
     ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke();
   }
 
-  if (!ecgConnected) {
-    ctx.beginPath();
-    ctx.strokeStyle = 'rgba(255,255,255,0.20)';
-    ctx.lineWidth = 2;
-    const mid = h / 2;
-    ctx.moveTo(0, mid);
-    for (let x = 1; x < w; x++) {
-      ctx.lineTo(x, mid + (Math.random() - 0.5) * 1.5);
-    }
-    ctx.stroke();
-  } else {
+if (!ecgConnected) {
+ctx.beginPath();
+ctx.strokeStyle = 'rgba(255,255,255,0.20)';
+ctx.lineWidth = 2;
+const mid = h / 2;
+ctx.moveTo(0, mid);
+for (let x = 1; x < w; x++) {
+ctx.lineTo(x, mid + (Math.random() - 0.5) * 1.5);
+}
+ctx.stroke();
+}
+else {
     const grad = ctx.createLinearGradient(0, 0, w, 0);
     grad.addColorStop(0,   'rgba(43,191,176,0.0)');
     grad.addColorStop(0.3, 'rgba(43,191,176,1.0)');
@@ -95,9 +96,14 @@ function drawECG() {
     ctx.shadowBlur = 12;
 
     ctx.moveTo(0, getECGY(0, w, h, ecgPhase));
-    for (let x = 1; x < w; x++) {
-      ctx.lineTo(x, getECGY(x, w, h, ecgPhase));
-    }
+
+for (let x = 1; x < w; x++) {
+ctx.lineTo(
+x,
+getECGY(x, w, h, ecgPhase) +
+Math.sin((x + ecgPhase * 500) * 0.02) * 5
+);
+}
     ctx.stroke();
     ctx.shadowBlur = 0;
 
@@ -229,23 +235,6 @@ function updateTempArc(temp) {
   needle.setAttribute('cy', cy);
   needle.setAttribute('opacity', '1');
 }
-const presenceCard = document.querySelector('.card-presence');
-
-if (present) {
-
-orb.className = 'presence-orb';
-presenceCard.classList.remove("alert");
-
-presLbl.textContent = "Baby Detected";
-
-} else {
-
-orb.className = 'presence-orb absent alert';
-presenceCard.classList.add("alert");
-
-presLbl.textContent = "No Baby Detected";
-
-}
 /* ─────────────────────────────────────────
    RENDER DATA
 ───────────────────────────────────────── */
@@ -302,15 +291,27 @@ function renderData(d) {
   }
 
   // ── Alerts
-  if (moisture > 25) {
-    showAlert('diaper', '💧', 'Diaper Change Needed', `Wetness at ${moisture}% — time for a change.`);
-  }
-  if (temp > 35) {
-    showAlert('temp', '🌡️', 'Temperature High', `Reading ${temp.toFixed(1)}°C — please check on baby.`);
-  }
-  if (!present) {
-    showAlert('presence', '🐣', 'Baby Not Detected', 'Baby is not detected in the crib.');
-  }
+  const diaperCard = document.querySelector('.card-diaper');
+
+if (moisture > 25) {
+diaperCard.classList.add("alert");
+} else {
+diaperCard.classList.remove("alert");
+}
+ const tempCard = document.querySelector('.card-temp');
+
+if (temp > 35) {
+tempCard.classList.add("alert");
+} else {
+tempCard.classList.remove("alert");
+}
+const presenceCard = document.querySelector('.card-presence');
+
+if (!present) {
+presenceCard.classList.add("alert");
+} else {
+presenceCard.classList.remove("alert");
+}
 
   // ── Last update
   const now = new Date();

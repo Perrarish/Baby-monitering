@@ -76,7 +76,9 @@ color:var(--muted);
 }
 
 /* ECG STRIP */
-
+.ecg-strip{
+overflow:hidden;
+}
 .ecg-strip{
 background:var(--bg);
 border-radius:var(--radius);
@@ -359,7 +361,27 @@ display:flex;
 gap:10px;
 align-items:center;
 }
+/* ALERT BLINK */
 
+@keyframes alertBlink{
+0%{
+background:#fff2f2;
+box-shadow:0 0 0 rgba(255,90,60,0.4);
+}
+50%{
+background:#ffe5e5;
+box-shadow:0 0 20px rgba(255,90,60,0.6);
+}
+100%{
+background:#fff2f2;
+box-shadow:0 0 0 rgba(255,90,60,0.4);
+}
+}
+
+.card.alert{
+animation:alertBlink 1s infinite;
+border:1px solid rgba(255,90,60,0.5);
+}
 /* RESPONSIVE */
 
 @media(max-width:860px){
