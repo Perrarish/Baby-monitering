@@ -1,7 +1,7 @@
 /* ─────────────────────────────────────────
    CONFIGURATION
 ───────────────────────────────────────── */
-const API_URL = "http://192.168.1.6/data";
+const API_URL = "http://10.241.170.173/data";
 const POLL_INTERVAL = 2000;
 
 /* ─────────────────────────────────────────
@@ -240,7 +240,7 @@ function updateTempArc(temp) {
 ───────────────────────────────────────── */
 function renderData(d) {
   // ── Moisture
-  const moisture = Math.max(0, Math.min(100, d.soilMoisture));
+ const moisture = Math.max(0, Math.min(100, d.moisture));
   const moistEl = document.getElementById('moisture-val');
   moistEl.innerHTML = `${moisture}<sup>%</sup>`;
   flashUpdate(moistEl);
@@ -271,8 +271,7 @@ function renderData(d) {
   const ring1   = document.getElementById('ring-1');
   const ring2   = document.getElementById('ring-2');
   const present = 
-      d.ir1 === "OBJECT DETECTED" &&
-      d.ir2 === "OBJECT DETECTED";
+      d.irStatus === "OBJECT DETECTED";
 
   if (present) {
     orb.className = 'presence-orb';
@@ -308,9 +307,11 @@ tempCard.classList.remove("alert");
 const presenceCard = document.querySelector('.card-presence');
 
 if (!present) {
-presenceCard.classList.add("alert");
+  presenceCard.classList.add("alert");
+  presenceCard.classList.add("blinking"); // Add blinking effect
 } else {
-presenceCard.classList.remove("alert");
+  presenceCard.classList.remove("alert");
+  presenceCard.classList.remove("blinking"); // Remove blinking effect
 }
 
   // ── Last update
